@@ -21,7 +21,7 @@ app.use("/api/v1/vehicles", vehicleRouter);
 
 app.use("/api/v1/bookings", bookingsRouter);
 
-app.get("/", auth("admin"), (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
     res.send("Welcome to the Vehicle Rental System API");
 })
 
