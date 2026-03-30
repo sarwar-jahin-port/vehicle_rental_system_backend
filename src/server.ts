@@ -2,7 +2,6 @@ import express, { Request, Response } from 'express';
 import initDB from './config/db';
 import authRouter from './modules/auth/auth.routes';
 import { config } from './config/env';
-import auth from './middleware/auth';
 import userRouter from './modules/user/user.routes';
 import vehicleRouter from './modules/vehicle/vehicle.routes';
 import bookingsRouter from './modules/bookings/bookings.routes';

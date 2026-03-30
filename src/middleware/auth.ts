@@ -9,14 +9,15 @@ const auth = (...roles: string[]) => async (req: any, res: any, next: any) => {
     }
 
     const token = authHeader.split(" ")[1];
+    // console.log("Received Token:", token);
     if (!token) {
         return res.status(401).json({ message: "Unauthorized" });
     }
 
     try {
         const decodedToken = jwt.verify(token, config.jwtSecret as string) as jwt.JwtPayload;
-        console.log("Decoded Token:", decodedToken);
-        console.log("Required Roles:", roles);
+        // console.log("Decoded Token:", decodedToken);
+        // console.log("Required Roles:", roles);
         if (roles.length > 0 && (!decodedToken.role || !roles.includes(String(decodedToken.role)))) {
             return res.status(403).json({ message: "Forbidden" });
         }
