@@ -1,5 +1,3 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
 import express, { Request, Response } from 'express';
 import initDB from './config/db';
 import authRouter from './modules/auth/auth.routes';
